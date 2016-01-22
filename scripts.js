@@ -24,15 +24,31 @@ var divisibleByThreeAndFive = function(inputNumber) {
 	}
 };
 
+/* var pingpong = function(inputNumber) {
+	var integerArray = createArray(inputNumber);
+	
+	integerArray.forEach(function(number, index, integerArray) {
+		if (divisibleByThreeAndFive(number) === 'pingpong') {
+			integerArray(index, "pingpong");
+		} else if (divisibleByThree(number) === 'ping') {
+			integerArray.splice(index, "ping");
+		} else if (divisibleByFive(number) === 'pong') {
+			integerArray.splice(index, "pong");
+		}
+	});
+	return integerArray;
+}; */
+
+
 var pingpong = function(inputNumber) {
 	var integerArray = createArray(inputNumber);
 	
-	integerArray.forEach(function(element, index) {
-		if (divisibleByThreeAndFive(element) === 'pingpong') {
+	integerArray.forEach(function(number, index, integerArray) {
+		if (divisibleByThreeAndFive(number) === 'pingpong') {
 			integerArray[index] = 'pingpong';
-		} else if (divisibleByThree(element) === 'ping') {
+		} else if (divisibleByThree(number) === 'ping') {
 			integerArray[index] = 'ping';
-		} else if (divisibleByFive(element) === 'pong') {
+		} else if (divisibleByFive(number) === 'pong') {
 			integerArray[index] = 'pong';
 		}
 	});
@@ -43,18 +59,13 @@ $(document).ready(function() {
 	$("button#submit").click(function(event){
 		event.preventDefault();
 		
-		var inputNumber = parseInt($("input#putnumber").val());
+		var inputNumber = $("input#putnumber").val();
 		var result = pingpong(inputNumber);
 		
-		if (result === "ping") {
-			$("ul#output").prepend("<li>Ping</li>");
-		} else if (result === "pong") {
-			$("ul#output").prepend("<li>Pong</li>");
-		} else if (result === "pingpong") {
-			$("ul#output").prepend("<li>Pingpong</li>");
-		}
+		result.forEach(function(number) {
+			$("ul#output").prepend("<li>" + number + "</li>");
+		});
 		
 		$("input#putnumber").reset();
-		
 	});
 });

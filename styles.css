@@ -1,0 +1,12 @@
+.container {
+	margin: 0px 200px;
+	width: 100%;
+}
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Noticia Text', serif;
+}
