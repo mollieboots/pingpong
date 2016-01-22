@@ -53,7 +53,5 @@ $(document).ready(function() {
 		result.forEach(function(inputNumber) {
 			$("ul#output").prepend("<li>" + inputNumber + "</li>");
 		});
-		
-		document.getElementById('input#putnumber').reset();
 	});
 });
