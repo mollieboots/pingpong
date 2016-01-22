@@ -1,12 +1,53 @@
-.container {
-	margin: 0px 200px;
+.header {
 	width: 100%;
+	height: 100px;
+	padding: 1em;
+	padding-left: 100px;
+	background-color: #8DC4D6;
+}
+
+.sidebar {
+	float: left;
+	width: 20%;
+	height: 100%;
+	padding: 2em;
+	text-align: center;
+	background-color: #DDD;
+}
+
+.container {
+	padding: 2em;
+	width: 60%;
+	float: right;
 }
 
 body {
 	font-family: 'Titillium Web', sans-serif;
+	margin: 0px;
 }
 
 h1, h2, h3, h4 {
 	font-family: 'Noticia Text', serif;
+}
+
+a {
+	text-decoration: none;
+	color: #707070;
+}
+
+a:hover {
+	color: #333;
+}
+
+.btn {
+	background-color: #707070;
+	border-radius: 5px;
+	color: #DDD;
+	padding: 5px 8px;
+	font-family: 'Noticia Text', serif;
+}
+
+.btn:hover {
+	background-color: #333;
+	
 }

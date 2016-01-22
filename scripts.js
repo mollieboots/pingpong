@@ -1,3 +1,5 @@
+// Business Logic
+
 var createArray = function(inputNumber) {
 	var integerArray = [];
 	for (var inputNumber = inputNumber; inputNumber > 0 ; inputNumber -= 1) {
@@ -24,22 +26,6 @@ var divisibleByThreeAndFive = function(inputNumber) {
 	}
 };
 
-/* var pingpong = function(inputNumber) {
-	var integerArray = createArray(inputNumber);
-	
-	integerArray.forEach(function(number, index, integerArray) {
-		if (divisibleByThreeAndFive(number) === 'pingpong') {
-			integerArray(index, "pingpong");
-		} else if (divisibleByThree(number) === 'ping') {
-			integerArray.splice(index, "ping");
-		} else if (divisibleByFive(number) === 'pong') {
-			integerArray.splice(index, "pong");
-		}
-	});
-	return integerArray;
-}; */
-
-
 var pingpong = function(inputNumber) {
 	var integerArray = createArray(inputNumber);
 	
@@ -55,6 +41,8 @@ var pingpong = function(inputNumber) {
 	return integerArray;
 }
 
+// User Interface Logic
+
 $(document).ready(function() {
 	$("button#submit").click(function(event){
 		event.preventDefault();
@@ -65,7 +53,5 @@ $(document).ready(function() {
 		result.forEach(function(number) {
 			$("ul#output").prepend("<li>" + number + "</li>");
 		});
-		
-		$("input#putnumber").reset();
 	});
 });
