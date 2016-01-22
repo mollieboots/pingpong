@@ -29,12 +29,12 @@ var divisibleByThreeAndFive = function(inputNumber) {
 var pingpong = function(inputNumber) {
 	var integerArray = createArray(inputNumber);
 	
-	integerArray.forEach(function(number, index, integerArray) {
-		if (divisibleByThreeAndFive(number) === 'pingpong') {
+	integerArray.forEach(function(inputNumber, index, integerArray) {
+		if (divisibleByThreeAndFive(inputNumber) === 'pingpong') {
 			integerArray[index] = 'pingpong';
-		} else if (divisibleByThree(number) === 'ping') {
+		} else if (divisibleByThree(inputNumber) === 'ping') {
 			integerArray[index] = 'ping';
-		} else if (divisibleByFive(number) === 'pong') {
+		} else if (divisibleByFive(inputNumber) === 'pong') {
 			integerArray[index] = 'pong';
 		}
 	});
@@ -50,8 +50,10 @@ $(document).ready(function() {
 		var inputNumber = $("input#putnumber").val();
 		var result = pingpong(inputNumber);
 		
-		result.forEach(function(number) {
-			$("ul#output").prepend("<li>" + number + "</li>");
+		result.forEach(function(inputNumber) {
+			$("ul#output").prepend("<li>" + inputNumber + "</li>");
 		});
+		
+		document.getElementById('input#putnumber').reset();
 	});
 });
